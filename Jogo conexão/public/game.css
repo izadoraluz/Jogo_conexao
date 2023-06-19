@@ -1,0 +1,159 @@
+/* Essa página CSS foi feita baseada em: https://www.youtube.com/watch?v=R_MutcGu_xE&t=1s */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #111;
+    font-family: 'roboto' sans-serif;
+}
+
+.form-parent {
+    width: 850px;
+    height: 500px;
+    background: #171717;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75);
+}
+
+.player-one,
+.player-two {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: #f2f2f2;
+    background-size: cover;
+}
+
+.player-two {
+    left: 50%;
+    background-size: cover;
+}
+
+.form-container {
+    position: relative;
+    width: 50%;
+    min-width: 300px;
+    height: 100%;
+    background: #49ece2;
+    padding-top: 8%;
+    padding-bottom: 5%;
+    transition: 1s;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(2, calc(850px/2));
+    overflow: hidden;
+}
+
+.form {
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    flex-direction: column;
+    transition: 1s;
+    color: #595959;
+   
+}
+
+.title {
+    width: 100%;
+    font-size: 40px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.form p {
+    padding-top: 15px;
+}
+
+.player-number {
+    display: block;
+    width: 80%;
+    height: 35px;
+    margin-top: 40px;
+    border: solid 2px #595959;
+    border-radius: 10px;
+    align-self: center;
+    padding-left: 5px;
+}
+
+
+
+.bnt {
+    margin-top: 25px;
+    margin-bottom: 30px;
+    width: 100px;
+    height: 30px;
+    border: transparent;
+    align-self: center;
+
+    background: #F2F2F2;
+    box-shadow: -1px 1px 40px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    color: #595959;
+}
+
+.bnt {
+    transition: transform 0.9s ease;
+}
+
+.bnt:hover {
+    transform: scale(1.1);
+    background: #595959;
+    color: #fff;
+}
+
+.bnt:active {
+    transform: translateY(5px) rotate(2deg);
+}
+
+.link {
+    color: #000;
+    text-transform: capitalize;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.link:hover {
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.link:active {
+    transform: scale(0.95);
+}
+
+#player-two-form {
+    margin-left: 50%;
+}
+
+
+@media screen and (max-width : 800px){
+    .form-parent {
+        width: 50vw;
+        min-width: 300px;
+        overflow: hidden;
+    }
+
+    .form-container {
+        width: 100%;
+        grid-template-columns: repeat(2, 100%);
+    }
+}

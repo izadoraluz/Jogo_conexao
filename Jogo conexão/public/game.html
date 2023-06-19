@@ -1,0 +1,53 @@
+<!-- Essa página HTML foi feita baseada em: https://www.youtube.com/watch?v=R_MutcGu_xE&t=1s-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="game.css">
+    <title>Jogo</title>
+</head>
+<body>
+    <div class="form-parent">
+        <div class="player-one"></div>
+        <div class="player-two"></div>
+        <div class="form-container">
+            <div class="form" id="player-one-form">
+                <h1 class="title">PLAYER 1</h1>
+                <p>ESCOLHA UM NÚMERO 
+                <strong>SEM <br>QUE O PLAYER 2 VEJA: 👀</strong></p>
+                <input class="player-number" type="text" id="input-player-um" placeholder="Digite um número">
+                <p class="link" onclick="switchForm('playertwo')">Ir para player 2</p>
+            </div>
+
+            <div class="form" id="player-two-form">
+                <h1 class="title">PLAYER 2</h1>
+                <p>ESCOLHA UM NÚMERO 
+                <strong>SEM <br>QUE O PLAYER 1 VEJA: 👀</strong></p>
+                <input class="player-number" type="text" id="input-player-dois" placeholder="Digite um número">
+                <button type="submit" class="bnt" style="height: 45px;" 
+                id="botao-salvar-player-dois" onclick="redirecionar()">SALVAR E CONTINUAR</button>
+                <p class="link" onclick="switchForm('playerone')">Ir para player 1</p>
+            </div>
+        </div>
+        
+          
+    <script src="script.js"></script>
+    <script>
+        function redirecionar() {
+            if(numeroUm.value !== "" && numeroDois.value !== "") {
+                window.location.href = `result.html?resultado=${compararNumeros()}`;
+            }
+        }
+
+        const numeroUm = document.getElementById('input-player-um');
+        const numeroDois = document.getElementById('input-player-dois');
+        
+        function compararNumeros() {
+            return numeroUm.value === numeroDois.value;
+        }
+
+    </script>
+
+</body>
+</html>

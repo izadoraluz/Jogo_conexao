@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+    <title>Teste sua conexão</title>
+</head>
+<body>
+  <div class="form-parent">
+    <div class="container">
+        <h1><strong>JOGO: TESTE SUA CONEXÃO</strong></h1>
+        <h3>VOCÊ DESEJA JOGAR COM:</h3>
+     </div>
+
+    <div class="players">
+        <button class="quant-player" id="um-player">
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#625e59" class="bi bi-person-fill" viewBox="0 0 16 16">
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+          </svg>
+          <p>UM PLAYER</p>
+        </button>
+        <button class="quant-player" id="dois-players">
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#625e59" class="bi bi-person-fill" viewBox="0 0 16 16">
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#625e59" class="bi bi-person-fill" viewBox="0 0 16 16">
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+          </svg>
+          <p>DOIS PLAYERS</p>
+        </button>
+     </div>
+      
+    <div id="meuModal" class="modal">
+        <div class="modal-conteudo">
+          <span class="fechar">&times;</span>
+          <h2>Erro!</h2>
+          <p>As opções de quantidade de jogadores foi feita para te dar uma
+            falsa sensação de poder de escolha, mas esse jogo foi feito para 
+            ser jogado por dois players.<br><br>
+
+            Procure um colega e tente novamente.</p>
+        </div>
+     </div>
+ </div>
+     <script>
+        var botaoUmPlayer = document.getElementById("um-player");
+        var modal = document.getElementById("meuModal");
+
+        botaoUmPlayer.addEventListener("click", function() {
+        // Atrasar a exibição do modal em 500ms (meio segundo)
+        setTimeout(function() {
+            modal.style.display = "block";
+        }, 300);
+        });
+
+        // Ao clicar no botão de fechar, esconda o modal
+        var botaoFechar = document.getElementsByClassName("fechar")[0];
+        botaoFechar.addEventListener("click", function() {
+        modal.style.display = "none";
+        });
+
+        // Ao clicar fora do modal, esconda-o
+        window.addEventListener("click", function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+        });
+
+        // Redirecionar para a página do jogo
+        var botaoDoisPlayers = document.getElementById("dois-players");
+
+            botaoDoisPlayers.addEventListener("click", function() {
+
+            // Atrasar o redirecionamento para a outra página em 500ms (meio segundo)
+            setTimeout(function() {
+                window.location.href = "game.html";
+            }, 400);
+            });
+
+
+
+     </script>   
+</body>
+</html>

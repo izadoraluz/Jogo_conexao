@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="result.css">
+  <title>Resultado</title>
+</head>
+
+<body>
+  <div class="form-parent">
+    <h1 id="mensagem" ></h1>
+    <button class="jogar-novamente" onclick="redirecionar()">
+      <p>JOGAR NOVAMENTE</p>
+    </button>
+  </div>
+  
+  <script>
+    function redirecionar() {
+            // console.log(compararNumeros());
+            window.location.href = `index.html`;
+        }
+
+    const mensagemElemento = document.getElementById('mensagem');
+    const urlParams = new URLSearchParams(location.search);
+  // Verifica o resultado da comparação e exibe a mensagem correspondente
+  
+    if (urlParams.get('resultado') === 'true') {
+      mensagemElemento.textContent = "IMPRESSIONANTE,VO CÊS ESCOLHERAM O MESMO NÚMERO! VOCÊS TÊM UMA CONEXÃO SURREAL";
+    } else {
+      mensagemElemento.textContent = "VOCÊS TÊM UMA CONEXÃO PÉSSIMA! TALVEZ SEJA INTERESSANTE REVER SUA RELAÇÃO";
+    }
+  
+  </script>
+</body>
+</html>
